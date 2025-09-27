@@ -6,7 +6,7 @@ pipeline {
                             checkout scm
                             sh "pwd"
                             sh "ls -lrt"
-                            sh "yum install git -y"
+                            sh "sudo yum install git -y"
                     }
             }    
         }
