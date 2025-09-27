@@ -13,7 +13,7 @@ pipeline {
                 withCredentials([sshUserPrivateKey(credentialsId: 'eee', keyFileVariable: 'SSH_KEY')]) {
                         sh '''
                           
-                          ssh -i $SSH_KEY -o StrictHostKeyChecking=no ec2-user@13.233.196.110 "sudo systemctl restart nginx.service "'
+                          ssh -i $SSH_KEY -o StrictHostKeyChecking=no ec2-user@13.233.196.110 "sudo systemctl restart nginx.service "
 
                         '''
                 }
