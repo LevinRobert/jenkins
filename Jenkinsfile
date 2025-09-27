@@ -1,6 +1,6 @@
 stage('Checkout Code') {
         steps {
-            checkout scm
+            checkout SCM
          sh "pwd"
          sh "ls -lrt"
         }
