@@ -12,7 +12,7 @@ pipeline {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: 'eee', keyFileVariable: 'SSH_KEY_FILE')]) {
                  sh 'scp -i "${SSH_KEY_FILE}" levin.html root@13.233.196.110:/usr/share/nginx/html/index.html'
-                 sh 'ssh -i "$SSH_KEY_FILE" -o StrictHostKeyChecking=no root@13.233.196.110 "hostname -i"'
+                 sh 'ssh -i "$SSH_KEY_FILE" -o StrictHostKeyChecking=no ec2-user@13.233.196.110 "hostname -i"'
                 }
             }
         }
