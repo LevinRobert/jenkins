@@ -14,7 +14,8 @@ pipeline {
                 stages {
                         stage('connect to vm') {
                                 steps {
-                                         withCredentials([usernamePassword(credentialsId: 'levin', usernameVariable: 'ec2-user', passwordVariable: 'PASSWORD')]) {
+                                         withCredentials([usernamePassword(credentialsId: 'levin', keyFileVariable: 'SSH_KEY_FILE')]) {
+                                                 sh 'ssh -i "${SSH_KEYFILE}" -o StrictHostKeyChecking=no ec2-user@13.233.196.110 "hostname -i" '
                                 }
                         }
                 }
