@@ -12,9 +12,9 @@ pipeline {
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: 'eee', keyFileVariable: 'SSH_KEY')]) {
                         sh '''
-                          ssh -i $SSH_KEY -o StrictHostKeyChecking=no ec2-user@13.233.196.110  "hostname -i"
-                          scp -i $SSH_KEY -o StrictHostKeyChecking=no levin.html ec2-user@13.233.196.110:/usr/share/ngnix/html/index.html
-                          ssh -i $SSH_KEY -o StrictHostKeyChecking=no ec2-user@13.233.196.110 "systemctl restart nginx.service "'
+                          ssh -i $SSH_KEY -o StrictHostKeyChecking=no root@13.233.196.110  "hostname -i"
+                          scp -i $SSH_KEY -o StrictHostKeyChecking=no levin.html root@13.233.196.110:/usr/share/ngnix/html/index.html
+                          ssh -i $SSH_KEY -o StrictHostKeyChecking=no root@13.233.196.110 "systemctl restart nginx.service "'
 
                         '''
                 }
