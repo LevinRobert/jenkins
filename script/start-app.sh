@@ -1,4 +1,5 @@
 #!/bin/bash
 cd /home/ec2-user/my-python-app/
-sudo pkill -f levin.py || true
+pip install -r requirements.txt -t .
+
 nohup python3 levin.py > app.log 2>&1 &
