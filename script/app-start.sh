@@ -1,5 +1,7 @@
     #!/bin/bash
-    cd /opt/my-python-app
+    cd "/home/ec2-user/my-python-app"/
     # Activate virtual environment if used
     # source venv/bin/activate
-    python3 app.py &
+    pip install -r requirements.txt -t
+    sleep 5s
+    nohup python3 app.py > logs.txt 2>&1 &
