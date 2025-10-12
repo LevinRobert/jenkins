@@ -4,4 +4,4 @@
     # source venv/bin/activate
     pip install -r requirements.txt -t
     sleep 5s
-    nohup python3 app.py > logs.txt 2>&1 &
+    nohup python3 levin.py > logs.txt 2>&1 &
