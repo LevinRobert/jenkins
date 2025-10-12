@@ -1,9 +1,9 @@
 #!/bin/bash
+#set -e
 
-PIDS=$(pgrep -f "python3 app.py")
-if [ -n "$PIDS" ]; then
-    kill -9 $PIDS
-    echo "Old process killed"
-else
-    echo "No old process running"
-fi
+##TARGET_DIR="/home/ec2-user/my-python-app"
+
+echo "Cleaning old files"
+##rm -rf "$TARGET_DIR"/*
+rm -rf "/home/ec2-user/my-python-app"/*
+echo "Cleanup complete."
